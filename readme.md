@@ -5,7 +5,8 @@ Yes, this may seem to be a joke but this project I felt would be a good practice
 in doing some stuff in Natural Language Processing. I found a dataset on Kaggle
 where someone broke down every line from Sex and the City and turned it into one
 massive dataset. I picture a project that will allow a user to see who had the
-most positive/negative lines per episode. 
+most positive/negative lines per episode. It will also show which characters had
+the most lines for each season and episode. 
 
 # Getting started
 ### Installing
