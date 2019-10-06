@@ -15,4 +15,7 @@ export default {
 </script>
 
 <style scoped>
+header {
+  border: 2px solid black;
+}
 </style>
