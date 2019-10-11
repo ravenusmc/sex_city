@@ -46,6 +46,7 @@ section {
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
   margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: 5%;
   margin-right: 5%;
   height: 300px;
