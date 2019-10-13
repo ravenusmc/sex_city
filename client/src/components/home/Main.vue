@@ -9,9 +9,23 @@
         <div>
         </div>
 
-        <div>
-          <form>
+        <div class='form_div'>
+
+          <form @submit="submitSelection">
+            <h5>Select Season:</h5>
+            <select v-model="season" name="season">
+              <option v-for="season in seasons" :value="season">{{ season }}</option>
+            </select>
+            <button type="submit">Submit</button>
           </form>
+
+          <div>
+            <p>
+              This area will show the user the number of times each character speaks
+              on each season of Sex and the City.
+            </p>
+          </div>
+
         </div>
 
       </section>
@@ -23,7 +37,21 @@
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  data(){
+    return {
+      season: 'Season 1',
+      seasons: ['Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6']
+    }
+  },
+  methods: {
+    submitSelection(evt){
+      evt.preventDefault();
+      const seasonSelection = {
+        season: this.season,
+      }
+    }
+  }
 }
 </script>
 
@@ -46,6 +74,17 @@ main {
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
   border: 2px solid black;
+}
+
+.form_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1em;
+  border: 2px solid red;  */
 }
 
 </style>
