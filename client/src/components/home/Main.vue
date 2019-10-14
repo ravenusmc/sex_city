@@ -72,6 +72,7 @@ export default {
 
 .font {
   font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
 }
 
 main {

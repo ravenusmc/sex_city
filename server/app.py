@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+#bring in the files that I wrote
+from data import *
+
 
 # configuration
 DEBUG = True
@@ -19,10 +22,11 @@ CORS(app)
 @app.route('/seasonSpeachCount', methods=['GET', 'POST'])
 def seasonSpeachCount():
     if request.method == 'POST':
+        data = Data()
         post_data = request.get_json()
         season = int(post_data['season'])
-        print(season)
-        return jsonify('pong!')
+        season_data = data.seasonLineCountByCharacter(season)
+        return jsonify(season_data)
 
 
 if __name__ == '__main__':

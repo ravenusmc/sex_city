@@ -20,7 +20,8 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/seasonSpeachCount';
       axios.post(path, payload)
       .then((res) => {
-        commit('setDeathData', res.data);
+        console.log(res.data)
+        //commit('setDeathData', res.data);
       })
     }
 
