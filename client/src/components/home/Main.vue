@@ -12,17 +12,20 @@
         <div class='form_div'>
 
           <form @submit="submitSelection">
-            <h5>Select Season:</h5>
+            <h5 class='font'>Select Season:</h5>
             <select v-model="season" name="season">
               <option v-for="season in seasons" :value="season">{{ season }}</option>
-            </select>
+            </select>&nbsp;
             <button type="submit">Submit</button>
           </form>
 
           <div>
-            <p>
+            <p class='form_paragraph'>
               This area will show the user the number of times each character speaks
-              on each season of Sex and the City.
+              on each season of Sex and the City. To use, select a season from the
+              drop down above and hit submit. The graph will show the four
+              main characters and how much each one spoke on the show / season that's
+              been selected.
             </p>
           </div>
 
@@ -85,6 +88,10 @@ main {
   grid-template-rows: 1fr 1fr;
   grid-gap: 1em;
   border: 2px solid red;  */
+}
+
+.form_paragraph {
+  font-size: 20px;
 }
 
 </style>
