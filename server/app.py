@@ -10,13 +10,19 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 # enable CORS
-CORS(app, resources={r'/*': {'origins': '*'}})
+CORS(app)
+#CORS(app, resources={r'/*': {'origins': '*'}})
 
 
-# sanity check route
-@app.route('/ping', methods=['GET'])
-def ping_pong():
-    return jsonify('pong!')
+#This route will get the data for the number of times each character
+#speaks per seasion.
+@app.route('/seasonSpeachCount', methods=['GET', 'POST'])
+def seasonSpeachCount():
+    if request.method == 'POST':
+        post_data = request.get_json()
+        season = int(post_data['season'])
+        print(season)
+        return jsonify('pong!')
 
 
 if __name__ == '__main__':

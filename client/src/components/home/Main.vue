@@ -12,7 +12,7 @@
         <div class='form_div'>
 
           <form @submit="submitSelection">
-            <h5 class='font'>Select Season:</h5>
+            <h3 class='font'>Select Season:</h3>
             <select v-model="season" name="season">
               <option v-for="season in seasons" :value="season">{{ season }}</option>
             </select>&nbsp;
@@ -46,7 +46,7 @@ export default {
   data(){
     return {
       season: 'Season 1',
-      seasons: ['Season 1', 'Season 2', 'Season 3', 'Season 4', 'Season 5', 'Season 6']
+      seasons: ['1', '2', '3', '4', '5', '6']
     }
   },
   methods: {

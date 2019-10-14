@@ -17,8 +17,11 @@ export default new Vuex.Store({
   actions: {
 
     fetchSeasonData: ({commit}, {payload}) => {
-      console.log(payload)
-      console.log('Mike')
+      const path = 'http://localhost:5000/seasonSpeachCount';
+      axios.post(path, payload)
+      .then((res) => {
+        commit('setDeathData', res.data);
+      })
     }
 
   },
