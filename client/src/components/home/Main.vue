@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Main',
   data(){
@@ -48,11 +50,15 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'fetchSeasonData',
+    ]),
     submitSelection(evt){
       evt.preventDefault();
-      const seasonSelection = {
+      const payload = {
         season: this.season,
       }
+      this.fetchSeasonData({payload})
     }
   }
 }
