@@ -27,14 +27,14 @@ class Data():
         for character in characters:
             rows = []
             #resetting the dataset each time we loop through the data.
-            character_data_set = self.data
-            season_data_set = self.data[(self.data.Speaker == character)]
-            lines = len(season_data_set)
+            character_data_set = season_data_set
+            speaker_data_set = character_data_set[(character_data_set.Speaker == character)]
+            lines = len(speaker_data_set)
             rows.append(character)
             rows.append(int(lines))
             season_data.append(rows)
         return season_data
 
-# data = Data()
-# #data.test()
-# data.seasonLineCountByCharacter(2)
+#data = Data()
+#data.test()
+#data.seasonLineCountByCharacter(4)

@@ -18,13 +18,21 @@ export default new Vuex.Store({
 
   actions: {
 
+    fetchInitialGraph: ({commit}, {payload}) => {
+      const path = 'http://localhost:5000/seasonSpeachCount';
+      axios.post(path, payload)
+      .then((res) => {
+        commit('setSeasonData', res.data);
+      })
+    },
+
     fetchSeasonData: ({commit}, {payload}) => {
       const path = 'http://localhost:5000/seasonSpeachCount';
       axios.post(path, payload)
       .then((res) => {
         commit('setSeasonData', res.data);
       })
-    }
+    },
 
   },
 
@@ -33,7 +41,7 @@ export default new Vuex.Store({
     setSeasonData(state, data){
       state.seasonData = data
     }
-    
+
   },
 
 });

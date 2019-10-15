@@ -76,6 +76,7 @@ export default {
   methods: {
     ...mapActions([
       'fetchSeasonData',
+      'fetchInitialGraph'
     ]),
     submitSelection(evt){
       evt.preventDefault();
@@ -84,7 +85,13 @@ export default {
       }
       this.fetchSeasonData({payload})
     }
-  }
+  },
+  mounted() {
+    const payload = {
+      season: 1
+    }
+    this.fetchInitialGraph({payload})
+  },
 }
 </script>
 
@@ -115,10 +122,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 1em;
-  border: 2px solid red;  */
 }
 
 .form_paragraph {
