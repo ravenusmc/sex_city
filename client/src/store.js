@@ -8,10 +8,12 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     seasonSelected: {},
+    seasonData: {},
   },
 
   getters: {
     seasonSelected: state => state.seasonSelected,
+    seasonData: state => state.seasonData,
   },
 
   actions: {
@@ -20,8 +22,7 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/seasonSpeachCount';
       axios.post(path, payload)
       .then((res) => {
-        console.log(res.data)
-        //commit('setDeathData', res.data);
+        commit('setSeasonData', res.data);
       })
     }
 
@@ -29,6 +30,10 @@ export default new Vuex.Store({
 
   mutations: {
 
+    setSeasonData(state, data){
+      state.seasonData = data
+    }
+    
   },
 
 });

@@ -2,8 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import VueGoogleCharts from 'vue-google-charts';
 
 Vue.config.productionTip = false;
+
+//Google charts plugin
+Vue.use(VueGoogleCharts)
 
 new Vue({
   router,

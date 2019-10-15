@@ -1,14 +1,12 @@
 <template>
   <div>
 
-    <div class='cardDiv'>
-      <v-card>
+    <div>
         <GChart
           :type="typeOne"
           :data="data"
           :options="options"
         />
-      </v-card>
     </div>
 
   </div>

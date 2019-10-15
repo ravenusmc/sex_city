@@ -7,6 +7,11 @@
       <section id='firstStudyArea'>
 
         <div>
+          <GraphCard
+            :typeOne='typeOne'
+            :data='seasonData'
+            :options='chartOptionsSeasonLinesChart'>
+          </GraphCard>
         </div>
 
         <div class='form_div'>
@@ -40,14 +45,33 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
+import GraphCard from '@/components/graphs/Graphcard.vue';
 
 export default {
   name: 'Main',
+  components: {
+    GraphCard,
+  },
   data(){
     return {
       season: 'Season 1',
-      seasons: ['1', '2', '3', '4', '5', '6']
+      seasons: ['1', '2', '3', '4', '5', '6'],
+      typeOne: "BarChart",
+      chartOptionsSeasonLinesChart: {
+        title: 'Lines By Season By Character',
+        legend: { position: 'bottom' },
+        'height':300,
+        vAxis: { viewWindow: {
+          min:0
+        }}
+      },
     }
+  },
+  computed: {
+    ...mapGetters([
+      'seasonData',
+    ]),
   },
   methods: {
     ...mapActions([
