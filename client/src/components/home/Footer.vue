@@ -23,6 +23,7 @@ export default {
   font-family: 'Indie Flower', cursive;
   text-transform: uppercase;
   font-size: 30px;
+  color: white;
 }
 
 footer {

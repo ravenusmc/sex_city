@@ -2,7 +2,7 @@
   <div>
 
     <main>
-      <h1 class='font center'>Study Area</h1>
+      <h1 class='font center'>First Study Area</h1>
 
       <section id='firstStudyArea'>
 
@@ -55,7 +55,7 @@ export default {
   },
   data(){
     return {
-      season: 'Season 1',
+      season: '1',
       seasons: ['1', '2', '3', '4', '5', '6'],
       typeOne: "BarChart",
       chartOptionsSeasonLinesChart: {
@@ -114,7 +114,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
-  border: 2px solid black;
 }
 
 .form_div {
@@ -126,6 +125,16 @@ main {
 
 .form_paragraph {
   font-size: 20px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+@media only all and (max-width: 800px) {
+
+  #firstStudyArea {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 </style>

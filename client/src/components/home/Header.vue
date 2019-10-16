@@ -38,12 +38,12 @@ header {
 .homeHeader {
   border-radius: 10px;
   padding: 25px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid #d62a5e;
 }
 
 .headerTitle {
   text-transform: uppercase;
-  color: white;
+  color: #d62a5e;
 }
 </style>

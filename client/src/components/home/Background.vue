@@ -67,4 +67,19 @@ section div {
   background-repeat: no-repeat;
 }
 
+@media only all and (max-width: 800px) {
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 800px;
+    margin-bottom: 100px;
+  }
+
+  .pictureDiv {
+    height: 500px;
+  }
+
+}
+
 </style>
