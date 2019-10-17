@@ -38,6 +38,14 @@
 
       </section>
 
+      <h1 class='font center'>Second Study Area</h1>
+
+      <section id='secondStudyArea'>
+
+
+      </section>
+
+
     </main>
 
   </div>
