@@ -137,6 +137,19 @@ main {
   margin-right: 3%;
 }
 
+button {
+  background-color: #d62a5e;
+  color: white;
+  border: #d62a5e;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #de547d;
+  border: #de547d;
+}
+
 @media only all and (max-width: 800px) {
 
   #firstStudyArea {
