@@ -66,6 +66,18 @@
 
         </div>
 
+      </section>
+
+      <h1 class='font center'>Third Study Area</h1>
+
+      <section id='thirdStudyArea'>
+
+        <div>
+        </div>
+
+        <div class='form_div'>
+
+        </div>
 
       </section>
 
@@ -82,6 +94,9 @@ import GraphCard from '@/components/graphs/Graphcard.vue';
 import Image1 from '@/assets/img/season1.png';
 import Image2 from '@/assets/img/season2.png';
 import Image3 from '@/assets/img/season3.png';
+import Image4 from '@/assets/img/season4.png';
+import Image5 from '@/assets/img/season5.png';
+import Image6 from '@/assets/img/season6.png';
 
 export default {
   name: 'Main',
@@ -124,13 +139,18 @@ export default {
     },
     changeWordCloud(evt) {
       evt.preventDefault();
-      console.log(this.season)
       if (this.season === '1'){
         this.image = Image1
       }else if (this.season === '2'){
         this.image = Image2
       }else if (this.season === '3'){
         this.image = Image3
+      }else if (this.season === '4'){
+        this.image = Image4
+      }else if (this.season === '5'){
+        this.image = Image5
+      }else if (this.season === '6'){
+        this.image = Image6
       }
     }
   },
@@ -202,9 +222,21 @@ img {
   height: 300px;
 }
 
-@media only all and (max-width: 800px) {
+#thirdStudyArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+@media only all and (max-width: 975px) {
 
   #firstStudyArea {
+    grid-template-columns: 1fr;
+  }
+
+  #secondStudyArea {
     grid-template-columns: 1fr;
   }
 

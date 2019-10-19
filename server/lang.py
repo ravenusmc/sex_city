@@ -33,4 +33,4 @@ class Lang():
 
 
 lang = Lang()
-lang.seasonWordCloud(3)
+lang.seasonWordCloud(6)
