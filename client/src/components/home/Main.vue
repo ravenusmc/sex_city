@@ -4,6 +4,7 @@
     <main>
       <h1 class='font center'>First Study Area</h1>
 
+      <!-- First study area -->
       <section id='firstStudyArea'>
 
         <div>
@@ -37,9 +38,11 @@
         </div>
 
       </section>
+      <!-- End of first study area -->
 
       <h1 class='font center'>Second Study Area</h1>
 
+      <!-- Second study area -->
       <section id='secondStudyArea'>
 
         <div>
@@ -67,9 +70,11 @@
         </div>
 
       </section>
+      <!-- End of second study area -->
 
       <h1 class='font center'>Third Study Area</h1>
 
+      <!-- Third study area -->
       <section id='thirdStudyArea'>
 
         <div>
@@ -81,8 +86,8 @@
 
       </section>
 
-
     </main>
+    <!-- End of third study area -->
 
   </div>
 </template>
