@@ -35,6 +35,16 @@ class Data():
             season_data.append(rows)
         return season_data
 
+    #This method will get the sentiment of the lines spoken by the four main characters
+    #for each season. How this will work is that each line, by character, will get its sentiment
+    #and then an average will be found.
+    def sentimentByCharacter(self, season):
+        #Here I get a smaller data set based on where the season is set to
+        #what the user wants.
+        season_data_set = self.data[(self.data.Season == season)]
+        #This list will hold the main characters that will be examined
+        characters = ['Carrie', 'Miranda', 'Charlotte', 'Samantha']
+
 #data = Data()
 #data.test()
 #data.seasonLineCountByCharacter(4)

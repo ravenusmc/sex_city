@@ -28,6 +28,17 @@ def seasonSpeachCount():
         season_data = data.seasonLineCountByCharacter(season)
         return jsonify(season_data)
 
+#This route will get the data for the sentiment analysis
+@app.route('/seasonSentimentData',methods=['GET', 'POST'])
+def seasonSentimentData():
+    if request.method == 'POST':
+        data = Data()
+        post_data = request.get_json()
+        season = int(post_data['season'])
+        sentiment_data = data.sentiment(season)
+        return jsonify('Hi Mike')
+        #return jsonify(season_data)
+
 
 if __name__ == '__main__':
     app.run()

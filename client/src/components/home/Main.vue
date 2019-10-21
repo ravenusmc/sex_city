@@ -81,7 +81,13 @@
         </div>
 
         <div class='form_div'>
-
+          <form @submit="selectSeasonSentiment">
+            <h3 class='font'>Select Season:</h3>
+            <select v-model="season" name="season">
+              <option v-for="season in seasons" :value="season">{{ season }}</option>
+            </select>&nbsp;
+            <button type="submit">Submit</button>
+          </form>
         </div>
 
       </section>
@@ -133,7 +139,8 @@ export default {
   methods: {
     ...mapActions([
       'fetchSeasonData',
-      'fetchInitialGraph'
+      'fetchInitialGraph',
+      'fetchSentimentData'
     ]),
     submitSelection(evt){
       evt.preventDefault();
@@ -157,6 +164,13 @@ export default {
       }else if (this.season === '6'){
         this.image = Image6
       }
+    },
+    selectSeasonSentiment(evt){
+      evt.preventDefault();
+      const payload = {
+        season: this.season,
+      }
+      this.fetchSentimentData({payload})
     }
   },
   mounted() {

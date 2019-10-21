@@ -34,6 +34,15 @@ export default new Vuex.Store({
       })
     },
 
+    fetchSentimentData: ({commit}, {payload}) => {
+      const path = 'http://localhost:5000/seasonSentimentData';
+      axios.post(path, payload)
+      .then((res) => {
+        console.log(res.data)
+        //commit('setSeasonData', res.data);
+      })
+    }
+
   },
 
   mutations: {
