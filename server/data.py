@@ -60,19 +60,12 @@ class Data():
                 valance_list.append(valance.sentiment[0])
             list_total = sum(valance_list)
             average = list_total / len(valance_list)
+            average = format(average, '.5f')
             rows.append(character)
-            rows.append(int(average))
+            rows.append(float(average))
             season_data.append(rows)
-        print(season_data)
+        return season_data
 
-
-
-
-# text = "Today was a good day"
-# my_valance = TextBlob(text)
-# print(my_valance)
-# print(my_valance.sentiment)
-
-data = Data()
+#data = Data()
 # data.test()
-data.sentimentByCharacter(1)
+#data.sentimentByCharacter(1)

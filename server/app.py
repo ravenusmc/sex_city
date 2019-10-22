@@ -35,9 +35,8 @@ def seasonSentimentData():
         data = Data()
         post_data = request.get_json()
         season = int(post_data['season'])
-        sentiment_data = data.sentiment(season)
-        return jsonify('Hi Mike')
-        #return jsonify(season_data)
+        season_data = data.sentimentByCharacter(season)
+        return jsonify(season_data)
 
 
 if __name__ == '__main__':
