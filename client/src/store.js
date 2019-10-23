@@ -9,11 +9,13 @@ export default new Vuex.Store({
   state: {
     seasonSelected: {},
     seasonData: {},
+    sentimentData: {},
   },
 
   getters: {
     seasonSelected: state => state.seasonSelected,
     seasonData: state => state.seasonData,
+    sentimentData: state => state.sentimentData,
   },
 
   actions: {
@@ -34,12 +36,19 @@ export default new Vuex.Store({
       })
     },
 
+    fetchInitialSentimentGraph: ({commit}, {payload}) => {
+      const path = 'http://localhost:5000/seasonSentimentData';
+      axios.post(path, payload)
+      .then((res) => {
+        commit('setSentimentData', res.data);
+      })
+    },
+
     fetchSentimentData: ({commit}, {payload}) => {
       const path = 'http://localhost:5000/seasonSentimentData';
       axios.post(path, payload)
       .then((res) => {
-        console.log(res.data)
-        //commit('setSeasonData', res.data);
+        commit('setSentimentData', res.data);
       })
     }
 
@@ -49,6 +58,10 @@ export default new Vuex.Store({
 
     setSeasonData(state, data){
       state.seasonData = data
+    },
+
+    setSentimentData(state, data){
+      state.sentimentData = data
     }
 
   },

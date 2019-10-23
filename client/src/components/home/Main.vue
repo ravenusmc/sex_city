@@ -78,9 +78,15 @@
       <section id='thirdStudyArea'>
 
         <div>
+          <GraphCard
+            :typeOne='typeOne'
+            :data='sentimentData'
+            :options='chartOptionsSentimemtLinesChart'>
+          </GraphCard>
         </div>
 
         <div class='form_div'>
+
           <form @submit="selectSeasonSentiment">
             <h3 class='font'>Select Season:</h3>
             <select v-model="season" name="season">
@@ -88,6 +94,15 @@
             </select>&nbsp;
             <button type="submit">Submit</button>
           </form>
+
+          <div>
+            <p class='form_paragraph'>
+              This area will allow the user to select a season and then see the average
+              sentiment for each character in a season based on their lines. Please see
+              the readme file for this project on github for further information.
+            </p>
+          </div>
+
         </div>
 
       </section>
@@ -129,18 +144,28 @@ export default {
           min:0
         }}
       },
+      chartOptionsSentimemtLinesChart: {
+        title: 'Lines By Season By Character',
+        legend: { position: 'bottom' },
+        'height':300,
+        vAxis: { viewWindow: {
+          min:0
+        }}
+      },
     }
   },
   computed: {
     ...mapGetters([
       'seasonData',
+      'sentimentData',
     ]),
   },
   methods: {
     ...mapActions([
       'fetchSeasonData',
       'fetchInitialGraph',
-      'fetchSentimentData'
+      'fetchSentimentData',
+      'fetchInitialSentimentGraph',
     ]),
     submitSelection(evt){
       evt.preventDefault();
@@ -178,6 +203,7 @@ export default {
       season: 1
     }
     this.fetchInitialGraph({payload})
+    this.fetchInitialSentimentGraph({payload})
   },
 }
 </script>
@@ -256,6 +282,14 @@ img {
   }
 
   #secondStudyArea {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    height: 200px;
+  }
+
+  #thirdStudyArea {
     grid-template-columns: 1fr;
   }
 
