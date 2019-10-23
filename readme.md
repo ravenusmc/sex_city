@@ -6,7 +6,13 @@ in doing some stuff in Natural Language Processing. I found a dataset on Kaggle
 where someone broke down every line from Sex and the City and turned it into one
 massive dataset. I picture a project that will allow a user to see who had the
 most positive/negative lines per episode. It will also show which characters had
-the most lines for each season and episode. 
+the most lines for each season and episode.
+
+The process for how I do the sentiment analysis is that I loop through every line,
+by season, by character, and get the sentiment for each line. I then average the
+sentiment for each character and use that to display on the graph. I'm not sure
+how accurate/right that is to do. The concept is more proof of concept than
+anything. 
 
 # Getting started
 ### Installing
